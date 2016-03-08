@@ -8,7 +8,7 @@ The problem is that, the lion would eat the rabbit if unattended, and the rabbit
 
 What sequence would the man need to take his possessions across, in order not to have any of them eaten?
 
-***
+
 
 ###Important Points:
 
@@ -16,7 +16,6 @@ What sequence would the man need to take his possessions across, in order not to
 
 2. The lion, rabbit and carrot can not navigate the river by themselves!
 
-***
 
 ###Problem:
 
@@ -24,10 +23,10 @@ Given a string representing the steps to be performed by Binibining Comsci, our 
 
 The sequence of moves/steps will be encoded as a string using the following symbols:
 
-...– Man crosses with lion (L)
-...– Man crosses with rabbit (R)
-...– Man crosses with carrot (C)
-...– Man crosses with nothing (N)
+- Man crosses with lion (L)
+- Man crosses with rabbit (R)
+- Man crosses with carrot (C)
+- Man crosses with nothing (N)
 
 So the string RNLRCNR describes the following steps:
 
@@ -47,7 +46,7 @@ So the string RNLRCNR describes the following steps:
 
 Sample execution
 ```
-$> mp1.exe /path/to/in/mp2.in
+$> mp1.exe
 ```
 Sample input (mp2.in)
 ```
