@@ -1,7 +1,6 @@
 /*
  *  This program here is a simulator of the Lion, Rabbit,
  *  and Carrot Problem.
- *
  */
 
 #include<cstdlib>
