@@ -1,3 +1,11 @@
+/*
+ *  This program here is a URM Tracer that gets input from
+ *  mp1.in and processes it to produce an output and stores
+ *  it in mp1.out. It processes simple commands like copying
+ *  incrementing, and reseting registers. It also has a jump
+ *  command used to jump to different parts of the code.
+ */
+
 #include<cstdio>
 #include<cstdlib>
 #include<iostream>
