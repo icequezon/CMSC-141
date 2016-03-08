@@ -11,17 +11,19 @@ Important Points:
 5. Assume that input file will contain valid values. You may check invalid values and output an error message if you wish.
 Sample execution
 ```
-$> mp1.exe /path/to/in/mp1.in
+$> mp1.exe
 ```
 Sample input (mp1.in)
+```
 0 0 3 0 0 0 0 0 0 0
 S 0
 S 1
 Z 0
 J 1 2 6
 J 9 9 1
-
+```
 Sample output (mp1.out)
+```
 0 0 3 0 0 0 0 0 0 0
 1 0 3 0 0 0 0 0 0 0
 1 1 3 0 0 0 0 0 0 0
@@ -37,3 +39,4 @@ Sample output (mp1.out)
 1 3 3 0 0 0 0 0 0 0
 0 3 3 0 0 0 0 0 0 0
 0 3 3 0 0 0 0 0 0 0
+```
