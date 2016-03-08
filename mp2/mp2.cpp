@@ -1,10 +1,20 @@
-#include<iostream>
+/*
+ *  This program here is a simulator of the Lion, Rabbit,
+ *  and Carrot Problem.
+ *
+ */
+
 #include<cstdlib>
 #include<cstdio>
+#include<iostream>
+#include<fstream>
 #include<string>
 #include<vector>
-#include<fstream>
 
+/*
+ *  This function resets the state and locations
+ *  of the Lion, Rabbit, and Carrot.
+ */
 void resetValues(bool left[3], bool right[3]) {
     for(int i = 0; i < 3; i++) {
         left[i] = true;
@@ -12,6 +22,10 @@ void resetValues(bool left[3], bool right[3]) {
     }
 }
 
+/*
+ *  This function is used as a test function to print
+ *  the state of the Lion, Rabbit and Carrot.
+ */
 void printState(bool left[3], bool right[3]) {
 
     for(int i = 0; i < 3; i++) {
@@ -29,6 +43,11 @@ void printState(bool left[3], bool right[3]) {
     std::cout << std::endl;
 }
 
+/*
+ *  This function here reads every line in the file and stores them
+ *  in a vector or strings.
+ *  Returns a vector of string.
+ */
 std::vector<std::string> getCommands(FILE *fp) {
     std::vector<std::string> commands;
     commands.push_back("");
@@ -49,6 +68,11 @@ std::vector<std::string> getCommands(FILE *fp) {
     return commands;
 }
 
+/*
+ *  This function processes the commands and if valid
+ *  and not a bad move, executes them and returns
+ *  True and if not then returns False.
+ */
 bool commands(char cmd, bool from[3], bool to[3]) {
     if((cmd == 'L' || cmd == 'l' ) && from[0] == true) {
         from[0] = false;
@@ -63,19 +87,29 @@ bool commands(char cmd, bool from[3], bool to[3]) {
         to[2] = true;
     }
     else if(cmd == 'n' || cmd == 'N'){
-
+        //do nothing
     }
     else {
-        return false;
+        return false;       //invalid command or invalid move
     }
     return true;
 }
 
+/*
+ *  This function evaluates whether to do the command
+ *  left to right or right to left and executes the
+ *  entire command.
+ *  Returns true if and only if the Lion, Rabbit,
+ *  and Carrot is on the other side of the river after
+ *  executing the command and false if it is a bad move.
+ */
 bool doCommand(std::string command, bool left[3], bool right[3]) {
     for(int i = 0; i < command.size(); i++) {
         char cmd = command.at(i);
+
         if(command.size() <= 0)
             return false;
+
         if(i % 2 == 0) {
             //do operation on left to right
             if(!commands(cmd, left, right))
@@ -93,8 +127,9 @@ bool doCommand(std::string command, bool left[3], bool right[3]) {
                 return false;
         }
     }
+
     if(right[0] && right[1] && right[2])
-        return true;
+        return true;        //true since everything is on the other side of the river.
 
     return false;
 }
@@ -105,20 +140,18 @@ int main() {
     std::ofstream file;
     file.open("mp2.out");
     std::vector<std::string> commands = getCommands(fp);
-    for(int i = 0; i < commands.size(); i++) {
-        file << i << " - ";
+
+    for(int i = 0; i < commands.size()-1; i++) {    //till size-1 since last line is always an empty string
+        file << i+1 << " - ";                       //print which line is it on
 
         resetValues(left, right);
         if(doCommand(commands.at(i), left, right)) {
-            //std::cout << "OK";
-            file << "OK:" << commands.at(i);
+            file << "OK";
         }
         else {
-            //std::cout << "Nope";
             file << "Nope";
         }
         file << std::endl;
-        //std::cout << std::endl;
     }
     file.close();
     return 0;
