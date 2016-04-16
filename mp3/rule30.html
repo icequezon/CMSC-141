@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rule 30</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="rule30.html">Rule 30</a>
+		</div>
+		<div class="nav navbar-right navbar-form">
+				<div class="form-group">
+					<input id="generations" type="text" class="form-control" placeholder="Generations">
+				</div>
+				<button id="generate" class="btn btn-default navbav-btn">Generate</button>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="panel panel-primary center-block" id="initStateDiv">
+				<div class="panel-heading">
+					<h4 class="text-center">Initial State</h4>
+				</div>
+				<div class="panel-body">
+					<table id="initState">
+					</table>
+				</div>
+			</div>
+			<div class="panel panel-primary center-block" id="generatedStateDiv">
+				<div class="panel-heading">
+					<h4 class="text-center">Generated States</h4>
+				</div>
+				<div class="panel-body">
+					<table id="generatedState">
+					</table>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!--Include Jquery and Bootstrap javascripts-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!--Include custom Javascipt-->
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
